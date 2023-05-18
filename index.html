@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--lier balise-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>TP1-Eloi Chayer</title>
+    
+</head>
+<body>
+    <header>
+        <div id="titrePrincipaux">
+            <div id="animationTitrePrincipaux">
+                <div id="barreNoir"><div id="clignotant"></div></div>
+                <h1>Portfolio - <a href="#piedDePage">Eloi Chayer</a></h1>
+            </div>
+            <p id="changerTheme">Changer le thème</p>
+        </div>
+
+        <!--Bouton burger et navigation-->
+        <input type="checkbox" id="cc-BB">
+        <label for="cc-BB" class="BB-nav-principale">
+            <span class="material-icons icone-BB-ouvert">menu</span>
+        </label>
+        <nav class="nav-principale">
+            <a href="#aceuille">Accueil</a>
+            <a href="#aPropos">À propos</a>
+            <a href="#realisation">Réalisations</a>
+            <a href="#proCreation">Processus de création</a>
+        </nav>
+        <div class="bulle"></div>
+    </header>
+
+    <main>
+        <section id="aceuille" class="lesSections">
+            <h3>Accueil</h3>
+            <div>
+                <p>Jeune étudiant de 17 ans au Collège Maisonneuve en Technique d'intégration multimédia. Il est dans un programme où il en apprend sur le design, la programmation, le montage vidéo et tout autres matières reliées à la technologie et au multimédia. Son nom est Eloi Chayer et il est rendu a sa deuxième session dans ce programme. Dans cette page web vous trouverez son porfolio remplit de dessins et de travaux qu'il a réalisé depuis la fin de son secondaire.</p>
+                <div id="flou">
+                    <div id="conteneurAnimationCSSVague">
+                        <div class="effetLiquide un"></div>
+                        <div class="effetLiquide deux"></div>
+                        <div class="effetLiquide trois"></div>
+                        <div class="effetLiquide trois"></div>
+                        <div class="effetLiquide un"></div>
+                        <div class="effetLiquide trois"></div>
+                        <div class="effetLiquide deux"></div>
+                        <div class="effetLiquide deux"></div>
+                        <div class="effetLiquide un"></div>
+                        <div class="effetLiquide deux"></div>
+                        <div class="effetLiquide trois"></div>
+                        <div class="effetLiquide un"></div>
+                        <div class="effetLiquide un"></div>
+                        <div class="effetLiquide trois"></div>
+                        <div class="effetLiquide trois"></div>
+                        <div class="effetLiquide un"></div>
+                        <div class="effetLiquide deux"></div>
+                        <div class="effetLiquide trois"></div>
+                        <div class="effetLiquide deux"></div>
+                        <div class="effetLiquide un"></div>
+                        <div class="effetLiquide deux"></div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section id="aPropos" class="lesSections">
+            <h3>À propos</h3>
+            <div class="description">
+                <h5>Nouvelle espèce</h5>
+                <p>Une murale réalisée dans le cadre d'un cour de vidéo. Toute sa création a été filmé pour monté par la suite une vidéo de 3 minutes. <a href="https://www.youtube.com/watch?v=OEm-aghM5AI">Voir la viédo.</a></p>
+                <picture>
+                    <source media="(min-width: 998px)" srcset="Images/muralNouvelleEspece2.jpg">
+                    <source media="(min-width: 768px)" srcset="Images/muralNouvelleEspece3.jpg">
+                    <img src="Images/muralNouvelleEspece.jpg" alt="photo d'une mural représentant un poisson">
+                </picture>
+            </div>
+
+            <div class="description">
+                <h5>Un dragon</h5>
+                <p>Un dessin réalisé pour le plaisir dans sons temps libre. Il a été réalisé avec des crayons a l'alcool sur du papier.</p>
+                <picture>
+                    <source media="(min-width: 998px)" srcset="Images/dragon1.jpg">
+                    <source media="(min-width: 768px)" srcset="Images/dragon2.jpg">
+                    <img src="Images/dragon3.jpg" alt="photo d'un dessin représentant un dragon">
+                </picture>
+            </div>
+
+            <div class="description">
+                <h5>Admirer l'espace</h5>
+                <p>La deuxième collection de chandail qu'il a fait en 2021. Elle représente un astronaute admirant la voix lactée.</p>
+                <picture>
+                    <source media="(min-width: 998px)" srcset="Images/chandail2em.jpg">
+                    <source media="(min-width: 768px)" srcset="Images/chandail2em2.jpg">
+                    <img src="Images/chandail2em3.jpg" alt="photo de la deuxième collection">
+                </picture>
+            </div>
+        </section>
+        <section id="realisation" class="lesSections">
+            <h3>Réalisation</h3>
+
+            <input type="checkbox" id="cc-Realisation">
+            <label for="cc-Realisation" class="boutonRealisation">Voir les Réalisations</label>
+
+            <div class="figureImages">
+                <div class="photo une"></div>
+                <p>Son ancienne paire de ski qu'il a preinturée par la suite en 2022.</p>
+            </div>
+            <div class="figureImages">
+                <div class="photo deuxieme"></div>
+                <p>La première version de la mural qu'il a réalisée pour un cour de vidéo.</p>
+            </div>
+            <div class="figureImages">
+                <div class="photo troisieme"></div>
+                <p>Un de ses plus gros dessins qu'il a réalisé en 2021.</p>
+            </div>
+            <div class="figureImages">
+                <div class="photo quatrieme"></div>
+                <p>La première planche de skate qu'il a peinturée en 2021.</p>
+            </div>
+        </section>
+        <section id="proCreation" class="lesSections">
+            <h3>Processus de création</h3>
+            <span id="play" class="material-icons">play_arrow</span>
+            <span id="pause" class="material-icons">pause</span>
+            <p>La première étape est de trouver des inspirations pour la prochaine réalisation. On peut aller voir ce qui est à la mode en ce moment sur le web.</p>
+            <div id="scrollDansWeb">
+                <div id="imageWeb">
+                    <div id="souris"></div>
+                </div>
+            </div>
+            <p>La deuxième étape est de faire un croquis du résulta final pour nous aider à visualiser le dessin.</p>
+            <div id="crayonPlombGriboulliage">
+                <div id="croquisFond">
+                    <div id="crayon"></div>
+                </div>
+            </div>
+            <p>La troisième étape est de repasser à l'encre noir sur le croquis pour garder seulement les lignes que nous aimons.</p>
+            <div id="encrage">
+                <div id="fondDessin">
+                    <div id="crayonAEncre"></div>
+                </div>
+            </div>
+            <p>La dernière étape est de colorier avec les moyens que vous voulez.</p>
+            <div id="coloriage">
+                <div id="DessinCollorier">
+                    <div id="pinceau">
+                        <div id="tacheCouleur"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="piedDePage">
+        <div id="credits">
+            <h3>Crédits</h3>
+            <p>Réalisé par Eloi Chayer</p>
+            <p>Technique d'integration multimédia 2023</p>
+            <p>Animation et interaction en Web (TP1)</p>
+        </div>
+        <div id="liens">
+            <h3>Liens</h3>
+            <p><a href="https://www.youtube.com/channel/UC5S8HLJw611sAX7lpm0VEbQ">YouTube</a></p>
+            <p><a href="https://www.instagram.com/eloichayer/">Instagram</a></p>
+        </div>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html>

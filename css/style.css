@@ -1,0 +1,891 @@
+/*IMporté eds fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+
+/*Remise a 0 supplémentaire*/
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    user-select: none;
+}
+/*conteneur principale*/
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(22, 21, 21);
+    color: rgb(244, 244, 244);
+    font-family: 'Tilt Warp', sans-serif;
+    min-width: 425px;
+}
+
+/*cahnger la scrollBar*/
+::-webkit-scrollbar{
+    width: 1vw;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgba(244, 244, 244, 0.455);;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(244, 244, 244);;
+}
+
+::-webkit-scrollbar-corner{
+    background-color: rgba(22, 21, 21, 0);
+}
+/* -------------------------------en tete-----------------------*/
+header{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    pointer-events: none;
+}
+
+#titrePrincipaux{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 97vw;
+    background-color: rgb(22, 21, 21);
+    z-index: 3;
+}
+
+h1 a{
+    text-decoration: none;
+    color: rgb(244, 244, 244);
+}
+
+#changerTheme{
+    pointer-events: all;
+}
+
+#animationTitrePrincipaux{
+    overflow: hidden;
+    position: relative;
+    pointer-events: all;
+}
+
+@keyframes translation-barre-noir{
+    from, to{
+        transform: translateX(100%);
+    }
+    
+    50%{
+        transform: translateX(0%);
+    }
+}
+
+#barreNoir{
+    background-color: rgb(22, 21, 21);
+    transform: rotate(45deg);
+    width: 70vw;
+    height: 30vh;
+    position: absolute;
+    animation: translation-barre-noir 13s linear infinite forwards 
+}
+
+@keyframes clignoter{
+    from, to{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+
+#clignotant{
+    height: 15vh;
+    width: 0.5vw;
+    background-color: rgb(244, 244, 244);
+    animation: clignoter 0.5s linear infinite;
+}
+/*-------------------------------bouton burger------------------------*/
+.nav-principale{
+    background-color: rgb(35, 35, 35);
+    border-radius: 50%;
+    transform: translateX(-200%) scale(0);
+    transition: transform 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: auto;
+    height: 60vh;
+    z-index: 3;
+    pointer-events: all;
+}
+
+.nav-principale a{
+    margin-left: 38%;
+    text-decoration: none;
+    color: rgb(244, 244, 244);
+    border: none;
+    transition: border 0.5s;
+    z-index: 3;
+}
+
+.bulle{
+    background-color: aqua;
+    border-radius: 50%;
+    transform: translate(200%, -100%) scale(0);
+    transition: transform 0.5s;
+    width: auto;
+    height: 50vh;
+    z-index: 2;
+}
+
+.icone-BB-ouvert{
+    padding-top: 3%;
+    transform: translateX(80%) rotate(0deg) scale(200%);
+    transition: transform 0.5s;
+    z-index: 2;
+    pointer-events: all;
+}
+
+.BB-nav-principale{
+    background-color: rgb(22, 21, 21);
+    height: 11vh;
+    z-index: 3;
+}
+
+#cc-BB{
+    display: none;
+}
+
+.nav-principale a:hover{
+    border:aqua solid 1px;
+}
+
+
+/*SI la case a cocher est activer*/
+#cc-BB:checked ~ .nav-principale{
+    transform: translateX(-50%) scale(200%);
+}
+
+#cc-BB:checked ~ .bulle{
+    transform: translate(50%, 0%) scale(150%);
+}
+
+#cc-BB:checked + .BB-nav-principale > .icone-BB-ouvert{
+    transform: translateX(1600%) rotate(-90deg) scale(200%);
+    color: aqua;
+}
+
+/*=========================Effet liquide======================*/
+/*animation*/
+@keyframes effet-liquide1{
+    from, to{
+        transform: translate(0%, 0%) scale(120%);
+    }
+
+    25%{
+        transform: translate(-30%, 30%) scale(210%);
+    }
+
+    50%{
+        transform: translate(90%, -50%) scale(300%);
+    }
+
+    75%{
+        transform: translate(50%, 30%) scale(240%);
+    }
+}
+
+@keyframes effet-liquide2{
+    from, to{
+        transform: translate(0%, 0%) scale(120%);
+    }
+
+    25%{
+        transform: translate(40%, -10%) scale(150%);
+    }
+
+    50%{
+        transform: translate(-60%, 60%) scale(250%);
+    }
+
+    75%{
+        transform: translate(50%, 30%) scale(300%);
+    }
+}
+
+@keyframes effet-liquide3{
+    from, to{
+        transform: translate(0%, 0%) scale(150%);
+    }
+
+    25%{
+        transform: translate(-10%, 30%) scale(200%);
+    }
+
+    50%{
+        transform: translate(-30%, 75%) scale(330%);
+    }
+
+    75%{
+        transform: translate(10%, -10%) scale(250%);
+    }
+}
+
+
+/*flou*/
+#flou{
+    filter: blur(1.5rem);
+}
+
+/*bulle*/
+#conteneurAnimationCSSVague{
+    height: 70vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background-color: rgb(58, 58, 58);
+    
+}
+
+.effetLiquide{
+    border-radius: 50%;
+    height: 20vw;
+    width: 20vw;
+}
+
+.un{
+    background-color: rgb(255, 0, 76);
+    animation: effet-liquide1 5s infinite cubic-bezier(.25,1.06,.58,.3) backwards;
+}
+
+.deux{
+    background-color: rgb(21, 54, 188);
+    animation: effet-liquide2 13s infinite cubic-bezier(0.41, 1.98, 0.53, 0.51) backwards;
+    animation-delay: 0.5s;
+}
+
+.trois{
+    background-color: rgb(255, 208, 0);
+    animation: effet-liquide3 9s infinite cubic-bezier(1,-0.48,0,1.31) backwards;
+    animation-delay: 1.3s;
+}
+
+/*-----------------------1er section acceuil----------------------*/
+#aceuille{
+    padding-top: 25vh;
+    width: 96vw;
+}
+
+h3{
+    font-size: 1.5rem;
+    padding-left: 3%;
+}
+
+#aceuille div{
+    display: flex;
+}
+
+#aceuille div p{
+    font-family: 'Tinos', sans-serif ;
+    font-size: 1.3rem;
+    padding-left: 3%;
+    padding-right: 3%;
+    flex-basis: 50%;
+}
+
+
+/* ---------------------2em section A propos-------------------*/
+#aPropos{
+    padding-top: 7vh;
+    width: 96vw;
+    overflow: hidden;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+}
+
+.description h5{
+    font-size: 1.2rem;
+}
+
+.description p{
+    font-family: 'Tinos', sans-serif ;
+    font-size: 1.3rem;
+    padding-top: 3%;
+}
+
+.description p a{
+    color: rgb(244, 244, 244);
+    text-decoration: none;
+}
+
+.description img{
+    padding-top: 6%;
+    padding-bottom: 1%;
+    width: 95vw;
+    transform: skew(0deg, -8deg);
+}
+
+/*------------------------3em section Réalisation---------------------------*/
+#realisation{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15vh;
+    padding-bottom: 25vh;
+    overflow: hidden;
+    width: 96vw;
+}
+
+.figureImages{
+    transform: skew(10deg, 120deg) rotate(45deg);
+    transition: transform 0.5s;
+}
+
+.figureImages img{
+    width: 50vw;
+    padding: 3%;
+    
+}
+
+.figureImages p{
+    font-family: 'Tinos', sans-serif ;   
+    width: 50vw;
+    margin: 0 auto;
+    z-index: 0;
+}
+
+.photo{
+    background-repeat: no-repeat;
+    width: 60vw;
+    height: 60vh;
+    margin: 0 auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.une{
+    background-image: url(../Images/Ski.jpg);
+    background-size: 110%;
+    background-position: center;
+}
+
+.deuxieme{
+    background-image: url(../Images/poisson.jpg);
+    background-size: 250%;
+    background-position: center;
+}
+
+.troisieme{
+    background-image: url(../Images/pageRempli.jpg);
+    background-size: 150%;
+    background-position: center;
+}
+
+.quatrieme{
+    background-image: url(../Images/skate1.jpg);
+    background-size: 100%;
+    background-position: center;
+}
+
+.boutonRealisation{
+    border: solid rgb(244, 244, 244) 2px;
+    padding: 1%;
+    width: auto;
+    transition: border 0.5s;
+    z-index: 1000;
+    margin: 0 auto;
+    margin-top: 3vh;
+}
+
+#cc-Realisation{
+display: none;
+}
+/*Si la case a cocher est activer*/
+#cc-Realisation:checked ~ .figureImages{
+    transform: skew(0deg, 0deg) rotate(0deg);
+}
+
+#cc-Realisation:checked + .boutonRealisation{
+    border: solid aqua 2px;
+}
+/*-------------------------- 4em section Processus de création ---------------------*/
+#proCreation{
+    padding-top: 7vh;
+    z-index: 10000;
+    width: 96vw;
+    padding-left: 2%;
+    overflow: hidden;
+}
+
+#proCreation p{
+    font-family: 'Tinos', sans-serif ;   
+    width: 95vw;
+    margin: 0 auto;
+    z-index: 0;
+}
+
+#play, #pause{
+   
+    transform: rotate(0deg);
+    transition: transform 1s;
+    position: relative;
+}
+
+#play:hover, #pause:hover{
+    border: solid aqua 2px;
+    transform: rotate(-90deg);
+}
+/*-------------animation css---------------*/
+@keyframes deroulement-page-web{
+    from{
+        background-position: bottom;
+    }
+
+    to{
+        background-position: top;
+    }
+}
+
+@keyframes deplacer-souris{
+    from, to{
+        transform: translate(0%, 0%);
+    }
+
+    25%, 75%{
+        transform: translate(90%, 40%);
+    }
+
+    50%{
+        transform: translate(0%, 90%);
+    }
+}
+
+#scrollDansWeb, #coloriage, #encrage, #crayonPlombGriboulliage{
+    overflow: hidden;
+    height: 40vh;
+    width: 40vw;
+    margin: auto;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    transform: skew(0deg, -10deg);
+}
+
+#imageWeb{
+    margin: 3%;
+    background-image: url(../Images/web.png);
+    background-size: 200%;
+    height: 40vh;
+    width: 40vw;
+}
+
+#imageWeb.active{
+    margin: 3%;
+    background-image: url(../Images/web.png);
+    background-size: 200%;
+    height: 40vh;
+    width: 40vw;
+    animation: deroulement-page-web 2s infinite cubic-bezier(.1,.74,.32,.93) backwards;
+}
+
+#souris.active{
+    background-image: url(../Images/cursor.png);
+    background-repeat: no-repeat;
+    background-size: 3%;
+    height: 40vh;
+    width: 40vw;
+    animation: deplacer-souris 7s infinite ease alternate backwards;
+}
+
+@keyframes deplacer-crayon{
+    from, to{
+        transform: translate(80%, 10%) rotate(-15deg);
+    }
+
+    25%{
+        transform: translate(-60%, 62%) rotate(25deg);
+    }
+
+    50%{
+        transform: translate(92%, 90%) rotate(-30deg);
+    }
+
+    75%{
+        transform: translate(0%, 52%) rotate(45deg);
+    }
+}
+
+#croquisFond{
+    background-image: url(../Images/croquis.jpg);
+    background-position: center;
+    background-size: 360%;
+    background-repeat: no-repeat;
+    height: 40vh;
+    width: 40vw;
+}
+
+#crayon.active{
+    background-image: url(../Images/crayon.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    height: 40vh;
+    width: 40vw;
+    animation: deplacer-crayon 3s infinite cubic-bezier(0,1.04,1,.46);
+    z-index: 2;
+    position: absolute;
+}
+
+@keyframes bouger-sharpie{
+    from, to{
+        transform: translate(47%, 10%) rotate(-45deg);
+    }
+
+    25%{
+        transform: translate(35%, 32%) rotate(35deg);
+    }
+
+    50%{
+        transform: translate(-2%, 20%) rotate(-10deg);
+    }
+
+    75%{
+        transform: translate(-100%, 52%) rotate(75deg);
+    }
+}
+
+#fondDessin{
+    background-image: url(../Images/encragedessin.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 243%;
+    height: 40vh;
+    width: 40vw;
+}
+
+#crayonAEncre.active{
+    background-image: url(../Images/sharpie.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    height: 40vh;
+    width: 40vw;
+    animation: bouger-sharpie 7s infinite alternate cubic-bezier(.17,.67,.55,-0.87);
+}
+
+@keyframes teinte-de-gris {
+    from, to{
+        transform: translate(0%,0%) scale(100%) rotate(-60deg);
+    }
+
+    25%{
+        transform: translate(50%,-10%) scale(75%) rotate(40deg);
+    }
+
+    50%{
+        transform: translate(30%,20%) scale(80%) rotate(-130deg);
+    }
+
+    75%{
+        transform: translate(-30%,40%) scale(105%) rotate(10deg);
+    }
+}
+
+@keyframes peinture{
+    from, to{
+        background-color: blue;
+        height: 5vh;
+        width: 10vw;
+        border-radius: 25% 60% 20% 70%;
+    }
+
+    25%{
+        background-color: yellow;
+        height: 10vh;
+        width: 8vw;
+        border-radius: 67% 30% 30% 0%;
+    }
+
+    50%{
+        background-color: orange;
+        height: 7vh;
+        width: 9vw;
+        border-radius: 55% 40% 40% 30%;
+    }
+
+    75%{
+        background-color: greenyellow;
+        height: 9vh;
+        width: 13vw;
+        border-radius: 15% 10% 50% 30%;
+    }
+}
+
+#pinceau.active{
+    height: 40vh;
+    width: 40vw;
+    animation: teinte-de-gris 15s cubic-bezier(.14,1.44,.35,.36) infinite;
+    background-image: url(../Images/pinceau2.png);
+    background-size: 7%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+
+#tacheCouleur.active{
+    filter: blur(0.4rem);
+    animation: peinture 15s cubic-bezier(.14,1.44,.35,.36) infinite;
+    transform: translate(160%, 52%);
+    z-index: 1;
+}
+
+#DessinCollorier{
+    background-image: url(../Images/teteDeMort.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200%;
+    height: 40vh;
+    width: 40vw;
+}
+
+/*---------------------------- footer ----------------------------------------------*/
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 94vw;
+
+}
+
+footer div p{
+    font-family: 'Tinos', sans-serif ;  
+}
+
+footer div h3{
+    margin: 0;
+}
+
+#credits, #liens{
+    margin: 3%;
+}
+
+
+#liens p a{
+    color: white;
+    text-decoration: none;
+}
+
+
+/*----------------------------------autre-------------------------------------------*/
+.lesSections{
+    transform: translateX(-100%) scale(70%);
+    opacity: 0;
+    transition: transform 1s, opacity 0.5s;
+}
+
+.lesSections.deplacer{
+    transform: translateX(0%) scale(100%);
+    opacity: 1;
+}
+
+/*===================================requete Media======================================*/
+/*tablette*/
+@media  screen and (min-width: 768px) {
+
+    /*menu burger*/
+    .nav-principale{
+        background-color: rgb(22, 21, 21);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100vw;
+        height: 5vh;
+        z-index: 3;
+        transform: translate(0%, 0%);
+        border-radius: 0%;
+    }
+
+    .nav-principale a{
+        margin: 0%;
+        text-decoration: none;
+        color: rgb(244, 244, 244);
+        border: none;
+        transition: border 0.5s;
+        z-index: 3;
+        font-size: 1.3rem;
+    }
+
+    .BB-nav-principale{
+        display: none;
+    }
+
+    /*---------------acceuille-------------*/
+    #aceuille{
+        padding-top: 17vh;
+    }
+
+    #aceuille h3{
+        font-size: 2rem;
+    }
+
+    #aceuille div p {
+        font-size: 1.8rem;
+        margin: 0 auto;
+        width: auto;
+    }
+
+    /*---------------a propos--------------*/
+    .description h5{
+        font-size: 1.6rem;
+    }
+
+    .description p{
+        font-size: 1.8rem;
+    }
+
+    #aPropos{
+        padding-top: 15vh;
+    }
+    /*--------------realisation----------------*/
+    #realisation h3{
+        font-size: 2rem;
+    }
+
+    .boutonRealisation{
+        font-size: 1.7rem;
+    }
+
+    .figureImages p{
+        font-size: 1.8rem;
+    }
+    /*---------------processus de réation-------*/
+    #proCreation h3{
+        font-size: 2rem;
+    }
+
+    #proCreation p{
+        font-size: 1.8rem;
+    }
+
+    #proCreation{
+        padding-top: 15vh;
+    }
+
+    #DessinCollorier, #fondDessin, #imageWeb, #croquisFond{
+        background-size: 100%;
+    }
+    /*----------------footer-----------------*/
+    footer h3{
+        font-size: 2rem;
+    }
+    footer p{
+        font-size: 1.8rem;
+    }
+}
+/*ordinateur de bureau*/
+@media  screen and (min-width: 998px) {
+    header{
+        width: 100vw;
+    }
+
+    .titrePincipaux{
+        width: 80vw;
+    }
+    /*menu burger*/
+    .nav-principale{
+        background-color: rgb(22, 21, 21);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        width: 19vw;
+        height: 100vh;
+        z-index: 3;
+        transform: translate(0%, 0%);
+        border-radius: 0%;
+        padding-left: 2%;
+    }
+    /*conteneur general*/
+    main{
+        overflow: hidden;
+    }
+    footer, #aceuille, #aPropos, #realisation, #proCreation{
+        margin-left: 21vw;
+        margin-right: 4vw;
+        width: 70vw;
+        overflow: hidden;
+    }
+    /*acceuil*/
+    .effetLiquide{
+        border-radius: 50%;
+        height: 10vw;
+        width: 10vw;
+    }
+    /*a propos*/
+    .description img{
+        padding-top: 6%;
+        padding-bottom: 4%;
+        width: 70vw;
+    }
+
+    #aPropos{
+        padding-top: 16vh;
+    }
+
+    /*realisation*/
+    #realisation{
+        padding-top: 16vh;
+    }
+
+    .une, .deuxieme, .troisieme, .quatrieme{
+        background-size: 100%;
+    }
+
+    /*precessus de creation*/
+    #proCreation{
+        padding-top: 16vh;
+    }
+
+    #proCreation p{
+        width: 70vw;
+    }
+
+    #scrollDansWeb, #coloriage, #encrage, #crayonPlombGriboulliage{
+        margin: 7%;
+        margin-left: 18%;
+    }
+
+    #tacheCouleur{
+        filter: blur(0.4rem);
+        transform: translate(160%, 52%);
+        z-index: 1;
+    }
+
+    #pinceau{
+        background-size: 0.3%;
+    }
+
+    #crayonAEncre{
+        background-size: 5%;
+    }
+
+    #crayon{
+        background-size: 8%;
+    }
+
+    #souris{
+        background-size: 1.5%;
+    }
+
+    #DessinCollorier, #fondDessin, #imageWeb, #croquisFond{
+        background-size: 100%;
+    }
+}
